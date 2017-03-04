@@ -10,5 +10,6 @@ namespace repository
     {
         Product GetProduct(int Id);
         IEnumerable<Product> GetProducts();
+        void SaveProduct(Product product);
     }
 }

@@ -22,5 +22,11 @@ namespace repository
                new Product() {Id = 2, IsActive = true, Name = "Torch"}
            };
        }
+
+       public void SaveProduct(Product product)
+       {
+
+       }
+
     }
 }
