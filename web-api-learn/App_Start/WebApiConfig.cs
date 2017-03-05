@@ -14,10 +14,8 @@ namespace web_api_learn
             // Web API configuration and services
             config.DependencyResolver = new NinjectResolver();
             // Web API routes
-            config.MapHttpAttributeRoutes();
-
-            
-         //   config.Services.Replace(typeof(IContentNegotiator), new CustomNegotiator());
+            config.MapHttpAttributeRoutes();            
+            config.Services.Replace(typeof(IContentNegotiator), new CustomNegotiator());
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",

@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "api-models", "api-models\ap
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "repository", "repository\repository.csproj", "{D5937369-AE1E-4341-9AD9-8B45B8DF7206}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mvc-front-app", "mvc-front-app\mvc-front-app.csproj", "{846CE41A-BE7C-4D80-ACAD-0F8AF94154F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mvc-front-app.Tests", "mvc-front-app.Tests\mvc-front-app.Tests.csproj", "{3504CBC6-C8F6-4DD7-9B97-5FED0127B81C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{D5937369-AE1E-4341-9AD9-8B45B8DF7206}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D5937369-AE1E-4341-9AD9-8B45B8DF7206}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D5937369-AE1E-4341-9AD9-8B45B8DF7206}.Release|Any CPU.Build.0 = Release|Any CPU
+		{846CE41A-BE7C-4D80-ACAD-0F8AF94154F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{846CE41A-BE7C-4D80-ACAD-0F8AF94154F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{846CE41A-BE7C-4D80-ACAD-0F8AF94154F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{846CE41A-BE7C-4D80-ACAD-0F8AF94154F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3504CBC6-C8F6-4DD7-9B97-5FED0127B81C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3504CBC6-C8F6-4DD7-9B97-5FED0127B81C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3504CBC6-C8F6-4DD7-9B97-5FED0127B81C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3504CBC6-C8F6-4DD7-9B97-5FED0127B81C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
