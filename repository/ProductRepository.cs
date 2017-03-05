@@ -36,7 +36,7 @@ namespace repository
            };
        }
 
-<<<<<<< HEAD
+
         public void SaveTempProduct(IProduct product)
         {
             var serializer =  new NewtonsoftSerializer();
@@ -47,12 +47,12 @@ namespace repository
                    
 
         }
-=======
+
        public void SaveProduct(Product product)
        {
 
        }
 
->>>>>>> origin/master
+
     }
 }
