@@ -1,36 +1,57 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Net;
+using System.Net.Http;
+using System.Web;
 using System.Web.Http;
 using models;
 using repository;
 namespace web_api_learn.Controllers
 {
+    [RoutePrefix("products")]
     public class ProductController : ApiController
     {
         private readonly IProductRepository _productRepository;
 
-       // public ProductController()
+        //public ProductController()
         //{
-            //_productRepository = new ProductRepository();
+        //    _productRepository = new ProductRepository();
         //}
         public ProductController(IProductRepository productRepository)
         {
             _productRepository = productRepository;
         }
 
-        [Route("products/{id}")]
+        [Route("{id}")]
         [HttpGet]
         public Product GetProduct(int id)
         {
             return _productRepository.GetProduct(id);
         }
-        [Route("products")]
+        [Route("")]
         [HttpGet]
         public IEnumerable<Product>  GetAllProducts()
         {
-         
          return _productRepository.GetProducts();
+        }
+        [Route("")]
+        [HttpPost]
+        public HttpResponseMessage SaveProduct(Product product)
+        {
 
-            
+
+            try
+            {
+                _productRepository.SaveProduct(product);
+                return Request.CreateResponse(HttpStatusCode.Created);
+
+            }
+            catch (Exception ex)
+            {
+                
+                //log it
+                return Request.CreateResponse(HttpStatusCode.InternalServerError);
+            }
         }
     }
 }
