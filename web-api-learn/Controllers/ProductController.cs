@@ -21,13 +21,41 @@ namespace web_api_learn.Controllers
         {
             _productRepository = productRepository;
         }
-
+        /// <summary>
+        /// Retrieve a item
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [Route("{id}")]
         [HttpGet]
         public Product GetProduct(int id)
         {
             return _productRepository.GetProduct(id);
         }
+        /// <summary>
+        /// Update an item
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [Route("{id}")]
+        [HttpPut]
+        public HttpResponseMessage UpdateProduct(int id)
+        {
+            try
+            {
+                _productRepository.UpdateProduct(id);
+                return Request.CreateResponse(HttpStatusCode.OK);
+            }
+            catch (Exception e)
+            {
+                //log using ELMAH
+                return Request.CreateResponse(HttpStatusCode.InternalServerError);
+            }           
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         [Route("")]
         [HttpGet]
         public IEnumerable<Product>  GetAllProducts()

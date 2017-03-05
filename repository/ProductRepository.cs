@@ -20,28 +20,28 @@ namespace repository
 
        public Product GetProduct(int Id)
        {
-           return new Product() {Id = 1, IsActive = true, Name = "Purse"};
+           return new Product() {Id = 1, isActive = true, name = "Purse"};
        }
 
        public IEnumerable<Product> GetProducts()
        {
            return new List<Product>()
            {
-               new Product() {Id = 1, IsActive = true, Name = "Purse"},
-               new Product() {Id = 2, IsActive = true, Name = "Torch"},
-               new Product() {Id = 3, IsActive = true, Name = "Fork"},
-               new Product() {Id = 4, IsActive = true, Name = "Battery"},
-               new Product() {Id = 5, IsActive = true, Name = "Lens"},
-               new Product() {Id = 6, IsActive = true, Name = "Phone"}
+               new Product() {Id = 1, isActive = true, name = "Purse"},
+               new Product() {Id = 2, isActive = true, name = "Torch"},
+               new Product() {Id = 3, isActive = true, name = "Fork"},
+               new Product() {Id = 4, isActive = true, name = "Battery"},
+               new Product() {Id = 5, isActive = true, name = "Lens"},
+               new Product() {Id = 6, isActive = true, name = "Phone"}
            };
        }
 
 
-        public void SaveTempProduct(IProduct product)
+        public void SaveTempProduct(Product product)
         {
             var serializer =  new NewtonsoftSerializer();
             var cacheClient = new StackExchangeRedisCacheClient(serializer);
-            var productList = new List<IProduct>();
+            var productList = new List<Product>();
             productList.Add(product);
             cacheClient.Add("abc", product);  
                    
@@ -53,6 +53,9 @@ namespace repository
 
        }
 
-
+        public void UpdateProduct(int Id)
+        {
+           //call EF to update product
+        }
     }
 }
